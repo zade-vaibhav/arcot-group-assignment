@@ -18,7 +18,7 @@ export default function InsightSummery({  }: Props) {
 
     useEffect(() => { 
       if (chartRef && chartRef.current) {
-        const refrence = chartRef.current.getContext('2d');
+        const refrence = chartRef.current
   
         new Chart(refrence, {
           type: 'doughnut',
