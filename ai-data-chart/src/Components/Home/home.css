@@ -1,8 +1,27 @@
 .home_container{
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-color: antiquewhite;
+    flex-wrap: wrap;
+    display: flex;
+  
 }
 ::-webkit-scrollbar{
     display: none;
+}
+.container_top{
+   height: 40%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.chart_1{
+    height: 100%;
+    width: 45%;
+    background-color: gray;
+    border-radius: 10px;
+    border: 1px solid black;
 }
