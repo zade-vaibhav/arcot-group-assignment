@@ -1,4 +1,4 @@
-import React,{useRef,useEffect} from 'react'
+import {useRef,useEffect} from 'react'
 import Chart from 'chart.js/auto';
 import "./responceTime.css"
 import { useSelector } from 'react-redux';
@@ -14,7 +14,7 @@ export default function Reting({}: Props) {
     useEffect(() => {
         
       if (chartRef && chartRef.current) {
-        const refrence = chartRef.current.getContext('2d');
+        const refrence = chartRef.current
   
         new Chart(refrence, {
           type: 'bar',
