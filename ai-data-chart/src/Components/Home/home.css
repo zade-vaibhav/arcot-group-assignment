@@ -1,0 +1,8 @@
+.home_container{
+    height: 100vh;
+    width: 100vw;
+    background-color: antiquewhite;
+}
+::-webkit-scrollbar{
+    display: none;
+}
