@@ -14,7 +14,7 @@ export default function Usage_country({}: Props) {
 
     useEffect(() => { 
       if (chartRef && chartRef.current) {
-        const refrence = chartRef.current.getContext('2d');
+        const refrence = chartRef.current
   
         new Chart(refrence, {
           type: 'pie',
