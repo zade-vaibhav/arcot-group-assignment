@@ -4,18 +4,19 @@
     background-color: antiquewhite;
     flex-wrap: wrap;
     display: flex;
-  
 }
+
 ::-webkit-scrollbar{
     display: none;
 }
-.container_top{
+.container_first{
    height: 40%;
    width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
    gap: 10px;
+   margin:20px 0px;
 }
 
 .chart_1{
@@ -25,3 +26,44 @@
     border-radius: 10px;
     border: 1px solid black;
 }
+
+.container_second{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    align-items: center;
+    gap: 10px;
+ }
+
+ .container_third{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    align-items: center;
+    gap: 10px;
+ }
+ .container_fourth{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+ }
+
+ @media screen and (max-width: 720px) {
+    .container_first{
+        height: 40%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin:20px 0px;
+     }
+    
+  }

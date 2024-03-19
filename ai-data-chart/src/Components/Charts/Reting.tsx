@@ -1,39 +1,35 @@
-import { useEffect, useRef } from "react";
+import React,{useRef,useEffect} from 'react'
 import Chart from 'chart.js/auto';
-import "./insghtSummery.css";
+import "./responceTime.css"
 import { useSelector } from 'react-redux';
 
+type Props = {}
 
-type Props = {
-  
-};
+export default function Reting({}: Props) {
 
-export default function InsightSummery({  }: Props) {
-
-    const {insight_summary} = useSelector((state:any) => state.user.user.ai_data);
+    const {user_satisfaction} = useSelector((state:any) => state.user.user.ai_data);
     
-
-
     const chartRef = useRef(null);
 
-    useEffect(() => { 
+    useEffect(() => {
+        
       if (chartRef && chartRef.current) {
         const refrence = chartRef.current.getContext('2d');
   
         new Chart(refrence, {
-          type: 'doughnut',
+          type: 'bar',
           data: {
-            labels: ["total_queries","successful_queries","failed_queries","average_response_time"],
+            labels:user_satisfaction.ratings.map((item:any) => item.rating) ,
             datasets: [{
-              label: 'no of queries',
-              data: [insight_summary.total_queries,insight_summary.successful_queries,insight_summary.failed_queries,insight_summary.average_response_time],
+              label: 'ratings',
+              data:user_satisfaction.ratings.map((item:any) => item.count),
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 99, 132, )',
+                'rgba(54, 162, 235,)',
+                'rgba(255, 206, 86, )',
+                'rgba(75, 192, 192,)',
+                'rgba(153, 102, 255,)',
+                'rgba(255, 159, 64,)'
               ],
               borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -57,9 +53,10 @@ export default function InsightSummery({  }: Props) {
       }
     }, []);
    
+
   return (
-    <div  className="container">
+    <div className='container'>
          <canvas  ref={chartRef} ></canvas>
     </div>
-  );
+  )
 }
